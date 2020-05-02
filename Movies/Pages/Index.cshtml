@@ -17,7 +17,7 @@
         @foreach (String rating in MovieDatabase.MPAARatings)
         {
             <label>
-                <input type="checkbox" name="MPAARatings" value="@rating" />
+                <input type="checkbox" name="MPAARatings" value="@rating" checked="@Model.MPAARatings.Contains(rating)" />
                 @rating
             </label>
         }
@@ -26,7 +26,7 @@
         @foreach (String genre in MovieDatabase.Genres)
         {
             <label>
-                <input type="checkbox" name="Genres" value="@genre" />
+                <input type="checkbox" name="Genres" value="@genre" checked="@Model.MPAARatings.Contains(genre)"/>
                 @genre
             </label>
         }
@@ -34,16 +34,16 @@
         <h4>IMDB Rating</h4>
         <div>
             Between
-            <input name="IMDBMin" type="number" min="0" max="10" step="0.1" placeholder="min" />
+            <input name="IMDBMin" type="number" min="0" max="10" step="0.1" placeholder="min" value="@Model.IMDBMin"/>
             and
-            <input name="IMDBMax" type="number" min="0" max="10" step="0.1" placeholder="max" />
+            <input name="IMDBMax" type="number" min="0" max="10" step="0.1" placeholder="max" value="@Model.IMDBMax" />
         </div>
 
         <h4>Rotten Rating</h4>
         <div>
             Between
-            <input name="RottenMin" type="number" min="0" max="100" step="0.1" placeholder="min" />
-            <input name="RottenMax" type="number" min="0" max="100" step="0.1" placeholder="max" />
+            <input name="RottenMin" type="number" min="0" max="100" step="0.1" placeholder="min" value="@Model.RottenMin" />
+            <input name="RottenMax" type="number" min="0" max="100" step="0.1" placeholder="max" value="@Model.RottenMax"/>
         </div>
 
     </div>
